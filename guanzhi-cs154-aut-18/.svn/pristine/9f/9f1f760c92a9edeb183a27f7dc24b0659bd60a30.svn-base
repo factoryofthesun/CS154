@@ -1,0 +1,28 @@
+guanzhi hw3 grade: 26/32
+
+Graded files from svn revision 31
+
+--------------------------------------
+Question 1 points and comments: 4/10
+
+The test condition should be s <= 0. (-3)
+Similarly to the else branch, the first conditional branch only need to call funcQ once with two arguments and add the result with the third argument. (-3)
+
+Graded by: Yueheng Zhang (yuehengz)
+--------------------------------------
+
+Question 2 points and comments: 12/12
+
+Good job!
+
+Graded by: Yueheng Zhang (yuehengz)
+--------------------------------------
+
+Question 3 points and comments: 10/10
+Perfect!
+Graded by: Zayne Khouja (zayne)
+--------------------------------------
+
+If you believe there is an error in how you were graded, you have a week,
+starting from when this grade was returned, to notify us.
+Notify us by carefully filling out this form: http://goo.gl/forms/4tJOTk49qyMUJ17a2

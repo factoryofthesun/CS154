@@ -1,0 +1,42 @@
+1.
+int funcQ(int x, int y)
+{
+	return 3*y + x; 
+
+}
+
+int funcP(int r, int s, int t)
+{
+	if(s == 0)
+	{
+		return funcQ(t, funcQ(s, r) + t) + r; 
+	}
+	else
+	{
+		return funcQ(t,s) + r; 
+	}
+}
+
+2. 
+	A. x is held in %esi 
+	   n is held in %ecx
+ 	   result is held in %eax
+	   mask is held in %edx 
+	B. result = 0
+	   mask = 3 
+	C. test condition is mask != 0 
+	D. mask gets updated by being left shifted by n (multiplied by 2^n) 
+	E. result is updated by adding the (n*i) and (n*i+1) most signficant bytes of x, where i is the loop count (i.e. (x AND mask) OR result) 
+	F. 1) 0 
+	   2) 3 
+	   3) != 0 
+	   4) mask<<n 
+	   5) (x & mask) | result
+
+3.
+	A. &A([i][j][k]) = x_A + L((S*T)*i + T*j + k)
+	B. R = 4, S = 10, T = 9 
+	   Line 3 moves j to %eax, and line 4 stores 9*j into %edx. 
+	   Next, line 5 stores 90*i in %eax, which is then summed with %edx. 
+	   Finally, k is added to %eax, so %eax = 90i + 9j + k, which is precisely the address formula before multiplying by sizeof(int) and adding the base address. Therefore, 9 = T, S = 90/9 = 10, and R*S*T*sizeof(int) = sizeof(A) = 1440 by line 11. Line 8 gives us sizeof(int) = 4. Thus, R = 1440/360 = 4. 
+

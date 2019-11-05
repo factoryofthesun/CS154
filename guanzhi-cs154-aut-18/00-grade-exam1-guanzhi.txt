@@ -1,0 +1,13 @@
+guanzhi exam1 grade: 92/100
+
+  Question 1: 18 / 22
+  Question 2: 18 / 18
+  Question 3: 20 / 20
+  Question 4: 10 / 10
+  Question 5: 12 / 14
+  Question 6: 14 / 16
+
+Questions were graded by TAs and the instructor. If you believe a question
+was graded incorrectly, email the instructor,
+identifying the question number, and the grading error.
+

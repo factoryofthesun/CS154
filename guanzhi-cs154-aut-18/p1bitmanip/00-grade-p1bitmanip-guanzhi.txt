@@ -1,0 +1,89 @@
+guanzhi p1bitmanip grade: 99/99 
+ 
+https://phoenixforge.cs.uchicago.edu/svn/guanzhi-cs154-aut-18/p1bitmanip 
+Grading revision: 17 
+
+$ make
+gcc -O -Wall -lm -o btest bits.c btest.c decl.c tests.c
+bits.c: In function 'byteSwap':
+bits.c:189:37: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+     int ret = x & ~(0xFF << (n<<3)) & ~(0xFF << (m<<3)) | (((x >> (n << 3)) & 0xFF) << (m << 3)) | (((x >> (m << 3)) & 0xFF) << (n <<3));
+                                     ^
+bits.c: In function 'isGreater':
+bits.c:330:36: warning: suggest parentheses around operand of '!' or change '&' to '&&' or '!' to '~' [-Wparentheses]
+   return (checksigns & (y>>31)) | (!checksigns & sign);
+                                    ^
+bits.c: In function 'sign':
+bits.c:405:12: warning: suggest parentheses around operand of '!' or change '|' to '||' or '!' to '~' [-Wparentheses]
+     return !!((x >> 31) ^ x) | (x >>31);
+            ^
+gcc -O -Wall -o ishow ishow.c
+
+$ ./driver.pl
+1. Running './dlc -z' to identify coding rules violations.
+/usr/include/stdc-predef.h:1: Warning: Non-includable file <command-line> included from includable file /usr/include/stdc-predef.h.
+bits.c:189: Warning: suggest parentheses around arithmetic in operand of |
+
+Compilation Successful (2 warnings)
+
+2. Compiling and running './btest -g' to determine correctness score.
+gcc -O -Wall -lm -o btest bits.c btest.c decl.c tests.c 
+bits.c: In function 'byteSwap':
+bits.c:189:37: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+bits.c: In function 'isGreater':
+bits.c:330:36: warning: suggest parentheses around operand of '!' or change '&' to '&&' or '!' to '~' [-Wparentheses]
+bits.c: In function 'sign':
+bits.c:405:12: warning: suggest parentheses around operand of '!' or change '|' to '||' or '!' to '~' [-Wparentheses]
+
+3. Running './dlc -Z' to identify operator count violations.
+/usr/include/stdc-predef.h:1: Warning: Non-includable file <command-line> included from includable file /usr/include/stdc-predef.h.
+save-bits.c:189: Warning: suggest parentheses around arithmetic in operand of |
+
+Compilation Successful (2 warnings)
+
+4. Compiling and running './btest -g -r 2' to determine performance score.
+gcc -O -Wall -lm -o btest bits.c btest.c decl.c tests.c 
+save-bits.c: In function 'byteSwap':
+save-bits.c:189:37: warning: suggest parentheses around arithmetic in operand of '|' [-Wparentheses]
+     int ret = x & ~(0xFF << (n<<3)) & ~(0xFF << (m<<3)) | (((x >> (n << 3)) & 0xFF) << (m << 3)) | (((x >> (m << 3)) & 0xFF) << (n <<3));
+                                     ^
+save-bits.c: In function 'isGreater':
+save-bits.c:330:36: warning: suggest parentheses around operand of '!' or change '&' to '&&' or '!' to '~' [-Wparentheses]
+   return (checksigns & (y>>31)) | (!checksigns & sign);
+                                    ^
+save-bits.c: In function 'sign':
+save-bits.c:405:12: warning: suggest parentheses around operand of '!' or change '|' to '||' or '!' to '~' [-Wparentheses]
+     return !!((x >> 31) ^ x) | (x >>31);
+            ^
+
+
+5. Running './dlc -e' to get operator count of each function.
+
+Correctness Results	Perf Results
+Points	Rating	Errors	Points	Ops	Puzzle
+4	4	0	2	6	absVal
+2	2	0	2	11	allOddBits
+4	4	0	2	6	bang
+3	3	0	2	7	bitMask
+1	1	0	2	3	bitNor
+2	2	0	2	20	byteSwap
+3	3	0	2	10	conditional
+1	1	0	2	6	evenBits
+3	3	0	2	6	ezThreeFourths
+1	1	0	2	5	fitsShort
+2	2	0	2	3	getByte
+4	4	0	2	40	howManyBits
+2	2	0	2	3	implication
+3	3	0	2	13	isAsciiDigit
+3	3	0	2	16	isGreater
+3	3	0	2	2	isNonNegative
+1	1	0	2	7	isTmax
+1	1	0	2	1	minusOne
+3	3	0	2	19	rotateRight
+4	4	0	2	12	satAdd
+2	2	0	2	6	sign
+3	3	0	2	12	subOK
+
+Score = 99/99 [55/55 Corr + 44/44 Perf] (214 total operators)
+
+Final Grade: 99/99

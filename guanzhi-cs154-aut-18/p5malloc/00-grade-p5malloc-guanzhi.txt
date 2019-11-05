@@ -1,0 +1,187 @@
+guanzhi p5malloc grade: 93/100 
+ 
+https://phoenixforge.cs.uchicago.edu/svn/guanzhi-cs154-aut-18/p5malloc 
+Grading revision: 75 
+
+$ make
+gcc -Wall -O2 -g -DDRIVER -lm   -c -o mdriver.o mdriver.c
+gcc -Wall -O2 -g -DDRIVER -lm   -c -o mm.o mm.c
+gcc -Wall -O2 -g -DDRIVER -lm   -c -o memlib.o memlib.c
+gcc -Wall -O2 -g -DDRIVER -lm   -c -o fsecs.o fsecs.c
+gcc -Wall -O2 -g -DDRIVER -lm   -c -o fcyc.o fcyc.c
+gcc -Wall -O2 -g -DDRIVER -lm   -c -o clock.o clock.c
+gcc -Wall -O2 -g -DDRIVER -lm   -c -o ftimer.o ftimer.c
+gcc -Wall -O2 -g -DDRIVER -lm -o mdriver mdriver.o mm.o memlib.o fsecs.o fcyc.o clock.o ftimer.o
+
+Run 1/3
+
+
+$ ./mdriver -A
+Using default tracefiles in ./traces/
+Measuring performance with a cycle counter.
+Processor clock rate ~= 2100.3 MHz
+max_total_size = 100470.000000
+mem_heapsize = 104176.000000
+max_total_size = 18314.000000
+mem_heapsize = 20544.000000
+max_total_size = 1402.000000
+mem_heapsize = 4160.000000
+max_total_size = 576000.000000
+mem_heapsize = 1073216.000000
+max_total_size = 8190.000000
+mem_heapsize = 12384.000000
+max_total_size = 85637.000000
+mem_heapsize = 98368.000000
+max_total_size = 6136.000000
+mem_heapsize = 8256.000000
+max_total_size = 917146.000000
+mem_heapsize = 1120784.000000
+max_total_size = 24783.000000
+mem_heapsize = 32224.000000
+max_total_size = 59878.000000
+mem_heapsize = 81872.000000
+max_total_size = 15100270.000000
+mem_heapsize = 17285200.000000
+max_total_size = 16108.000000
+mem_heapsize = 20544.000000
+max_total_size = 537758.000000
+mem_heapsize = 655488.000000
+
+Results for mm malloc:
+   valid  util   ops    secs     Kops  trace
+   yes    96%      15  0.000000 52684 ./traces/corners.rep
+   yes    89%      12  0.000000 47199 ./traces/short2.rep
+   yes    34%      10  0.000000 67753 ./traces/malloc.rep
+ * yes    54%    6000  0.001336  4492 ./traces/binary-bal.rep
+ * yes    66%   14400  0.000194 74232 ./traces/coalescing-bal.rep
+ * yes    87%     420  0.000006 70268 ./traces/fs.rep
+ * yes    74%     118  0.000001 85699 ./traces/hostname.rep
+ * yes    82%   19405  0.000292 66372 ./traces/login.rep
+ * yes    77%     372  0.000005 81168 ./traces/ls.rep
+ * yes    73%    1494  0.000021 71051 ./traces/perl.rep
+ * yes    87%    4800  0.000605  7930 ./traces/random-bal.rep
+ * yes    78%     147  0.000002 82731 ./traces/rm.rep
+ * yes    82%   11913  0.000137 87034 ./traces/xterm.rep
+10        76%   59069  0.002599 22727
+
+Perf index = 49 (util) + 40 (thru) = 89/100
+correct:13
+perfidx:89
+13:89:22727:76
+perfpoints: 93
+
+Run 2/3
+
+
+$ ./mdriver -A
+Using default tracefiles in ./traces/
+Measuring performance with a cycle counter.
+Processor clock rate ~= 3803.6 MHz
+max_total_size = 100470.000000
+mem_heapsize = 104176.000000
+max_total_size = 18314.000000
+mem_heapsize = 20544.000000
+max_total_size = 1402.000000
+mem_heapsize = 4160.000000
+max_total_size = 576000.000000
+mem_heapsize = 1073216.000000
+max_total_size = 8190.000000
+mem_heapsize = 12384.000000
+max_total_size = 85637.000000
+mem_heapsize = 98368.000000
+max_total_size = 6136.000000
+mem_heapsize = 8256.000000
+max_total_size = 917146.000000
+mem_heapsize = 1120784.000000
+max_total_size = 24783.000000
+mem_heapsize = 32224.000000
+max_total_size = 59878.000000
+mem_heapsize = 81872.000000
+max_total_size = 15100270.000000
+mem_heapsize = 17285200.000000
+max_total_size = 16108.000000
+mem_heapsize = 20544.000000
+max_total_size = 537758.000000
+mem_heapsize = 655488.000000
+
+Results for mm malloc:
+   valid  util   ops    secs     Kops  trace
+   yes    96%      15  0.000000 30380 ./traces/corners.rep
+   yes    89%      12  0.000000 38227 ./traces/short2.rep
+   yes    34%      10  0.000000 63182 ./traces/malloc.rep
+ * yes    54%    6000  0.000519 11567 ./traces/binary-bal.rep
+ * yes    66%   14400  0.000085168691 ./traces/coalescing-bal.rep
+ * yes    87%     420  0.000003120059 ./traces/fs.rep
+ * yes    74%     118  0.000001143028 ./traces/hostname.rep
+ * yes    82%   19405  0.000167116268 ./traces/login.rep
+ * yes    77%     372  0.000003144558 ./traces/ls.rep
+ * yes    73%    1494  0.000012125337 ./traces/perl.rep
+ * yes    87%    4800  0.000345 13916 ./traces/random-bal.rep
+ * yes    78%     147  0.000001146215 ./traces/rm.rep
+ * yes    82%   11913  0.000090132555 ./traces/xterm.rep
+10        76%   59069  0.001226 48196
+
+Perf index = 49 (util) + 40 (thru) = 89/100
+correct:13
+perfidx:89
+13:89:48196:76
+perfpoints: 93
+
+Run 3/3
+
+
+$ ./mdriver -A
+Using default tracefiles in ./traces/
+Measuring performance with a cycle counter.
+Processor clock rate ~= 3761.2 MHz
+max_total_size = 100470.000000
+mem_heapsize = 104176.000000
+max_total_size = 18314.000000
+mem_heapsize = 20544.000000
+max_total_size = 1402.000000
+mem_heapsize = 4160.000000
+max_total_size = 576000.000000
+mem_heapsize = 1073216.000000
+max_total_size = 8190.000000
+mem_heapsize = 12384.000000
+max_total_size = 85637.000000
+mem_heapsize = 98368.000000
+max_total_size = 6136.000000
+mem_heapsize = 8256.000000
+max_total_size = 917146.000000
+mem_heapsize = 1120784.000000
+max_total_size = 24783.000000
+mem_heapsize = 32224.000000
+max_total_size = 59878.000000
+mem_heapsize = 81872.000000
+max_total_size = 15100270.000000
+mem_heapsize = 17285200.000000
+max_total_size = 16108.000000
+mem_heapsize = 20544.000000
+max_total_size = 537758.000000
+mem_heapsize = 655488.000000
+
+Results for mm malloc:
+   valid  util   ops    secs     Kops  trace
+   yes    96%      15  0.000000 91587 ./traces/corners.rep
+   yes    89%      12  0.000000 77550 ./traces/short2.rep
+   yes    34%      10  0.000000109336 ./traces/malloc.rep
+ * yes    54%    6000  0.000750  8002 ./traces/binary-bal.rep
+ * yes    66%   14400  0.000092156507 ./traces/coalescing-bal.rep
+ * yes    87%     420  0.000003125892 ./traces/fs.rep
+ * yes    74%     118  0.000001142799 ./traces/hostname.rep
+ * yes    82%   19405  0.000164118204 ./traces/login.rep
+ * yes    77%     372  0.000003143092 ./traces/ls.rep
+ * yes    73%    1494  0.000012124788 ./traces/perl.rep
+ * yes    87%    4800  0.000337 14244 ./traces/random-bal.rep
+ * yes    78%     147  0.000001144661 ./traces/rm.rep
+ * yes    82%   11913  0.000075159334 ./traces/xterm.rep
+10        76%   59069  0.001438 41091
+
+Perf index = 49 (util) + 40 (thru) = 89/100
+correct:13
+perfidx:89
+13:89:41091:76
+perfpoints: 93
+
+Final Grade: 93/100

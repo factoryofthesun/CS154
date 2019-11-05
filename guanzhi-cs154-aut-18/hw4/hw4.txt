@@ -1,0 +1,21 @@
+1. 
+	a) ttttttttssbb
+	b) Read 0x833: hit, 0xD0
+	   Read 0x00A: hit, 0x4A
+	   Read 0x006: hit, 0x46
+	   Read 0xFFE: hit, 0x03 
+	   Read 0x54D: miss, M[0x54D]
+	   Write 0x54E: hit, n/a 
+	   Write 0x007: hit, n/a
+	   Read 0x44C: miss, M[0x44C]
+	   Read 0xFFE: miss, M[0xFFE]
+2. 
+	a) 1
+	b) 1/2
+	c) 1/2
+	d) A larger cache size would not help to reduce the miss rate because the overwrites are not eliminating useful blocks when the cache has 512 bytes. Since the policy is LRU, each array reference past the midpoint overwrites lines from the first half of each array. 
+	e) A larger block size would help reduce the miss rate, since each block would be able store more contiguous array values for every miss, increasing the number of references to the array between each miss. 
+
+3. 
+	a) Average latency = (F_ld + F_st)*(H * R + M*(1-R)) + F_bj*L_bj + (1-F_ld - F_st - F_bj) * L_al
+	b) 17.63

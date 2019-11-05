@@ -1,0 +1,260 @@
+guanzhi p4shell grade: 100/100 
+ 
+ 
+Grading revision: 64 
+
+$ make
+gcc -Wall -Werror -o myshell myshell.c
+
+$ grade.py
+You are in the right directory
+deleting + ...
+deleting advancedRedirection_concat_rd_14 ...
+deleting advancedRedirection_concat_rd_14 ...
+deleting + ...
+deleting advancedRedirection_format_rd_3 ...
+deleting + ...
+deleting advancedRedirection_format_rd_4 ...
+deleting advancedRedirection_format_rd_4 ...
+deleting + ...
+deleting advancedRedirection_format_rd_7 ...
+deleting + ...
+deleting advancedRedirection_format_rd_8 ...
+deleting advancedRedirection_format_rd_8 ...
+deleting advancedRedirection_illegal_rd_11 ...
+deleting + ...
+deleting advancedRedirection_illegal_rd_12 ...
+deleting + ...
+deleting advancedRedirection_illegal_rd_9 ...
+deleting advancedRedirection_illegal_rd_9 ...
+deleting buildin_wrongFormat_rd_11 ...
+deleting buildin_wrongFormat_rd_15 ...
+deleting buildin_wrongFormat_rd_19 ...
+deleting buildin_wrongFormat_rd_23 ...
+deleting buildin_wrongFormat_rd_3 ...
+deleting buildin_wrongFormat_rd_7 ...
+Don't delete clean.sh
+deleting complexRedirection_format_rd_4 ...
+deleting complexRedirection_format_rd_8 ...
+deleting complexRedirection_illegal_rd_11 ...
+deleting complexRedirection_illegal_rd_9 ...
+deleting gooduser_rd_rd_1 ...
+deleting gooduser_rd_rd_2 ...
+Don't delete grade.py
+deleting directory out ...
+Don't delete runOneTest.sh
+rm: cannot remove 'gooduser_rd_*': No such file or directory
+rm: cannot remove 'complexRedirection_*': No such file or directory
+rm: cannot remove 'advancedRedirection_*': No such file or directory
+----------------------------------
+Running batch file: gooduser_basic
+Diffing gooduser_basic.stdout
+
+
+Diffing gooduser_basic.stderr
+
+
+gooduser_basic      8	8
+----------------------------------
+Running batch file: gooduser_args
+Diffing gooduser_args.stdout
+
+
+Diffing gooduser_args.stderr
+
+
+gooduser_args       8	8
+----------------------------------
+Running batch file: gooduser_rd
+Diffing gooduser_rd.stdout
+
+
+Diffing gooduser_rd.stderr
+
+
+Diffing gooduser_rd_rd_1
+
+
+Diffing gooduser_rd_rd_2
+
+
+gooduser_rd         8	8
+----------------------------------
+Running batch file: gooduser_multipleCommand
+Diffing gooduser_multipleCommand.stdout
+
+
+Diffing gooduser_multipleCommand.stderr
+
+
+gooduser_multipleCommand8	8
+----------------------------------
+Running batch file: buildin_wrongFormat
+Diffing buildin_wrongFormat.stdout
+
+
+Diffing buildin_wrongFormat.stderr
+
+
+buildin_wrongFormat 8	8
+----------------------------------
+Running batch file: cd_toFolderNotExist
+Diffing cd_toFolderNotExist.stdout
+
+
+Diffing cd_toFolderNotExist.stderr
+
+
+cd_toFolderNotExist 3	3
+----------------------------------
+Running batch file: badCommand
+Diffing badCommand.stdout
+
+
+Diffing badCommand.stderr
+
+
+badCommand          4	4
+----------------------------------
+Running batch file: complexCommand
+Diffing complexCommand.stdout
+
+
+Diffing complexCommand.stderr
+
+
+complexCommand      6	6
+----------------------------------
+Running batch file: multipleCommand
+Diffing multipleCommand.stdout
+
+
+Diffing multipleCommand.stderr
+
+
+multipleCommand     9	9
+----------------------------------
+Running batch file: complexRedirection_format
+Diffing complexRedirection_format.stdout
+
+
+Diffing complexRedirection_format.stderr
+
+
+Diffing complexRedirection_format_rd_1
+
+
+Diffing complexRedirection_format_rd_2
+
+
+Diffing complexRedirection_format_rd_3
+
+
+Diffing complexRedirection_format_rd_4
+
+
+Diffing complexRedirection_format_rd_5
+
+
+Diffing complexRedirection_format_rd_6
+
+
+Diffing complexRedirection_format_rd_7
+
+
+Diffing complexRedirection_format_rd_8
+
+
+complexRedirection_format6	6
+----------------------------------
+Running batch file: advancedRedirection_format
+Diffing advancedRedirection_format.stdout
+
+
+Diffing advancedRedirection_format.stderr
+
+
+Diffing advancedRedirection_format_rd_1
+
+
+Diffing advancedRedirection_format_rd_2
+
+
+Diffing advancedRedirection_format_rd_3
+
+
+Diffing advancedRedirection_format_rd_4
+
+
+Diffing advancedRedirection_format_rd_5
+
+
+Diffing advancedRedirection_format_rd_6
+
+
+Diffing advancedRedirection_format_rd_7
+
+
+Diffing advancedRedirection_format_rd_8
+
+
+advancedRedirection_format6	6
+----------------------------------
+Running batch file: complexRedirection_illegal
+Diffing complexRedirection_illegal.stdout
+
+
+Diffing complexRedirection_illegal.stderr
+
+
+Diffing complexRedirection_illegal_rd_9
+
+
+complexRedirection_illegal6	6
+----------------------------------
+Running batch file: advancedRedirection_illegal
+Diffing advancedRedirection_illegal.stdout
+
+
+Diffing advancedRedirection_illegal.stderr
+
+
+Diffing advancedRedirection_illegal_rd_9
+
+
+advancedRedirection_illegal6	6
+----------------------------------
+Running batch file: advancedRedirection_concat
+Diffing advancedRedirection_concat.stdout
+
+
+Diffing advancedRedirection_concat.stderr
+
+
+Diffing advancedRedirection_concat_rd_14
+
+
+advancedRedirection_concat6	6
+----------------------------------
+Running batch file: emptyInput
+Diffing emptyInput.stdout
+
+
+Diffing emptyInput.stderr
+
+
+emptyInput          1	1
+----------------------------------
+Running batch file: 1KCommand
+Diffing 1KCommand.stdout
+
+
+Diffing 1KCommand.stderr
+
+
+1KCommand           3	3
+two arguments       2	2
+does not exist      2	2
+total               100	100
+
+Final Grade: 100

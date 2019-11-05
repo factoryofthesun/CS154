@@ -1,0 +1,13 @@
+2)	
+	A. Yes, there is memory for P1. It will be loaded in the range 0-2, since the OS uses the lowest possible addresses. 
+	B. Yes, there is memory for P2. It will be loaded in addresses 5-7, since the OS needs 3 MB of contiguous memory and address 4 is filled. 
+	C. No, P3 cannot be loaded, since there are no open 3 MB contiguous memory spaces. 
+	D. P1 frag: (2 MB) addresses 1-2; P2 frag: (1 MB) address 7; P3 frag: none because not loaded
+ 	   Total internal fragmentation: 3 MB 
+	E. The external fragmentation are addresses 3, 8, and 9 -> 3 MB 
+
+3) 
+	A. 1, 1100101, 0x36, 0x65, 0x9B, S 
+	   0, 1001010, 0xA8, 0x4A, 0XF2, E
+	   0, 0110111, 0xA8, 0x37, 0xDF, S
+	B. 2^7 bytes 	

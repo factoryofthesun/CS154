@@ -1,0 +1,20 @@
+guanzhi hw5 grade: 40/40
+
+Graded files from svn revision 47
+
+--------------------------------------
+Question 1 points and comments: 20/20
+
+Good job! (But your description in D could be clearer, like mentioning using the local variable in the loop in the place of *pb. It might be a good idea to write out the code directly in problems like this.)
+
+Graded by: Yueheng Zhang (yuehengz)
+--------------------------------------
+
+Question 2 points and comments: 20/20
+Perfect!
+Graded by: Zayne Khouja (zayne)
+--------------------------------------
+
+If you believe there is an error in how you were graded, you have a week,
+starting from when this grade was returned, to notify us.
+Notify us by carefully filling out this form: http://goo.gl/forms/e3jpj2pXVRKSym0Q2

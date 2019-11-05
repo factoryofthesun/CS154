@@ -1,0 +1,16 @@
+1) 
+	A) *pb
+	B) If pb is a pointer to one of the array values 
+	C) memory aliasing 
+	D) just assign *pb to a local variable outside of the loop (e.g. int tmp = *pb) 
+2) 
+	A) One way system calls differ is that in order to access kernel services through a system call, the processors provide a special instruction "syscall n", which the user program executes to request service n. A second difference is that a system call runs in kernel mode, which accesses the kernel stack. A regular function call has instructions that access the same stack as the calling function. 
+	B) The man command displays the system's reference manuals, which have the system calls and library functions predefined in seperate sections. 
+	C) read: system call; read from a file descriptor 
+		close: system call; close a file descriptor (type unsigned int)
+		lseek: system call; read or write at a file offset 
+		fork: system call; create a child process 
+		alarm: library function; arranges for alarm signal to be delivered in input amount of seconds 
+		sprintf: library function; produce output according to format and write to character string 
+		pause: library function; causes calling process to pause until signal is delivered 
+		brk: library function; changes location of program break  

@@ -1,0 +1,40 @@
+1)
+	A) The divide by zero error sits in the exception table as the first entry, so it has exception #0. The first row of the exception table holds the address of the exception handler, so 0xC0005000. 
+	B) When the CPU attempts executing the instruction, the processor detects that an event has occurred and identifies the corresponding exception number 0. The processor triggers the divide by zero exception by making an indirect procedure call to entry 0 in the table to the fault handler. The first instruction of divideByZero is that the processor pushes the return address on the stack, which in this case is the faulting instruction - 0x08001000. 
+2) 
+	movl $3, %eax
+	movl $0, %ebx 
+	movl 8(%ebp), %ecx
+	movl 12(%ebp), %edx
+	int $0x80
+3) 
+	A) 1, P, 16, 0 
+	   2, P, 24, 101
+	   3, C, 20, 0
+	   4, P, 8, 101
+	   5, C, 8, 0
+	   6, C, 10, 0 
+	   7, P, 27, 101  
+	B) 1, P, 16, 0
+	   2, P, 24, 101
+	   3, C, 20, 101 
+	   4, C, 8, 0 
+	   5, C, 10, 0 
+	   6, P, 27, 101 
+	
+	   The race condition here is between the kill instructions between the child and parents. In the case of A, fork returns the values for each process, then the child process runs first and sends the SIGUSR1 signal to the parent process. The signal handler runs in the parent process, and prints the handler statement. The parent then sends the SIGUSR1 signal the child process, which prints and then terminates because forkret = 0 in the child process. In the case of B, the child process prints the hello statement, but the parent process sends the SIGUSR1 signal first, which causes the child process to terminate before the child can send SIGUSR1 to the parent. 
+	
+	C) 1, P, 16, 0
+       2, P, 24, 101
+       3, C, 8, 0
+       4, C, 10, 0
+       5, P, 27, 101  
+
+	   The race condition is between the scheduling of the child process execution and parent process execution. When the kernel schedules the parent process to run first, then the parent will send the SIGUSR1 signal to the child, which will then terminate, before any of the instructions in the child process are executed. 
+	
+	D) 1, P, 16, 0
+       2, C, 20, 0
+       3, P, 8, 0 
+	   4, P, 10, 0
+
+	   The race condition is when the child process runs fully before the child PID is even assigned to the forkret variable in the parent process. Thus, when the child sends the SIGUSR1 signal to the parent process, the handler kills the parent process because forkret is still 0 in the parent process. 

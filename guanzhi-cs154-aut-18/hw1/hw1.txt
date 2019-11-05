@@ -1,0 +1,13 @@
+Question 1 
+foo = 0x0100
+endian = ((char *) &foo)[0] 
+
+This code works because on a big endian machine foo would be stored with 01 at the first address, then 00 at the second, and the opposite for a little endian machine. Since the size of a char is 1 byte, this code splits foo into an array of bytes ordered by address. Thus, you can get the byte at the first address by getting the 0th index byte. If the byte is 01, then you know that the byte ordering is big-endian. If 00, then little-endian.  
+
+Question 2 
+A. !!~x 
+B. !!x
+C. !!((x >>(((sizeof(int)-1)<<3)+4) & 0xF)^0xF)
+D. !!(x & 0x0F)
+E. (x >> ((sizeof(int)-1)<<3) & 0xFF) == (x & 0xFF)
+F. !!(x & 0x55555555)

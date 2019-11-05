@@ -1,0 +1,22 @@
+guanzhi hw2 grade: 29.5/34
+
+Graded files from svn revision 20
+
+--------------------------------------
+Question 1 points and comments: 12.5/14
+
+You should mention endianness in your explanation for B since that¡¯s the reason we don¡¯t know what¡¯s in 0x222. The value for F should be converted to hex according to the requirement of the problem.
+
+Graded by: Yueheng Zhang (yuehengz)
+--------------------------------------
+
+Question 2 points and comments: 17/20
+E: Values are stored as 4-bytes!
+F: Value = 0x90
+J: Value - 0x4
+Graded by: Zayne Khouja (zayne)
+--------------------------------------
+
+If you believe there is an error in how you were graded, you have a week,
+starting from when this grade was returned, to notify us.
+Notify us by carefully filling out this form: http://goo.gl/forms/GSfsUHHqdfFk67Nn1

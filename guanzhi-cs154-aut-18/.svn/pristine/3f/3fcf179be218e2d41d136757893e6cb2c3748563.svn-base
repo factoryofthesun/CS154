@@ -1,0 +1,20 @@
+guanzhi hw1 grade: 20/22
+
+Graded files from svn revision 13
+
+--------------------------------------
+Question 1 points and comments: 8/10
+
+The idea is correct but an int is four byte which is 8 hex digits. 0x0100 would cause endian to be 0 on both big and little endian machine.(Also, do remember the semicolons;))
+
+Graded by: Yueheng Zhang (yuehengz)
+--------------------------------------
+
+Question 2 points and comments: 12/12
+Perfect. Well done!
+Graded by: Zayne Khouja (zayne)
+--------------------------------------
+
+If you believe there is an error in how you were graded, you have a week,
+starting from when this grade was returned, to notify us.
+Notify us by carefully filling out this form: http://goo.gl/forms/MedKftlLOvTzm5ta2
